@@ -110,5 +110,11 @@ newset = as.data.frame(newset)
 av_names = lapply(names(xtr_sel)[1:79],function(x) paste0("Mean(",x,")"))
 colnames(newset)=c("subject_id","activity",av_names)
 
+dir2 = "./Tidy Dataset"
+write.csv(newset,paste0(dir2,"/Reduced_set.csv"))
+tidyset %>% relocate(activity)
+tidyset = tidyset %>% relocate(c(subject_id,set,activity_id,activity))
+write.csv(tidyset,paste0(dir2,"/Tidy_set.csv"))
+
 
 
