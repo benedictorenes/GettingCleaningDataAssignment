@@ -7,9 +7,9 @@ The repo consist on the following files:
   - run_Analysis.R
 
 And two folders:
-  - Original data set
+  - UCI HAR Dataset
     - This folder contains the original data and code book   
-  - Tidy data set
+  - Tidy Dataset
     -This folder contains two tidy dasets, as required in the assignment, which are obtained using the run_Analysis.R file and the original data set. 
       - Tidy_set
       - Reduced_set
