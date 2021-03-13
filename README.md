@@ -1,11 +1,9 @@
 # GettingCleaningDataAssignment
+
+### Daniel Benedicto Orenes
 Repo for the peer graded assignment of the Coursera Getting and Celaning Data course
 
-  - Daniel Benedicto Orenes
-
-
-
-
+  
 
 The repo consist on the following files:
   - CodeBook.md
