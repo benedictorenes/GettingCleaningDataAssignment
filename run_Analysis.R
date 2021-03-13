@@ -98,17 +98,31 @@ xtst_sel$activity = ytst2
 ##### join the data sests
 tidyset = rbind(xtr_sel,xtst_sel)
 
+## Extract the average of each quantity grouping by subject and activity, and return 
+# a list with the summarised data
 av_summ = lapply(as.character(names(xtr_sel)),
                  function(x) group_by(tidyset,subject_id,activity) %>% summarise(mean(.data[[x]])))
-
+# With the summarised data from the line above, create a new data frame
 newset = av_summ[[1]]
 for (i in 2:79){
   newset = cbind(newset,av_summ[[i]][[3]])
 }
-
 newset = as.data.frame(newset)
+# Rename the columns with appropriate labels
 av_names = lapply(names(xtr_sel)[1:79],function(x) paste0("Mean(",x,")"))
 colnames(newset)=c("subject_id","activity",av_names)
+
+
+## Write data sets to csv and txt files
+dir2 = "./Tidy Dataset"
+write.csv(newset,paste0(dir2,"/Reduced_set.csv"))
+write.table(newset,paste0(dir2,"/Reduced_set.txt"),row.names = FALSE)
+
+# Rearrange columns to put the subject and activity labels at the beginning before writing it to csv
+tidyset %>% relocate(activity)
+tidyset = tidyset %>% relocate(c(subject_id,set,activity_id,activity))
+write.csv(tidyset,paste0(dir2,"/Tidy_set.csv"))
+
 
 
 
