@@ -1,4 +1,14 @@
 # GettingCleaningDataAssignment
+<<<<<<< HEAD
+=======
+
+### Daniel Benedicto Orenes
+Repo for the peer graded assignment of the Coursera Getting and Celaning Data course
+
+  
+
+
+>>>>>>> 17b160ae698a71ecdbc6aceaab953f2bb8f84e70
 
 ### Daniel Benedicto Orenes
 Repo for the peer graded assignment of the Coursera Getting and Celaning Data course
